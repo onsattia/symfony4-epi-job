@@ -1,0 +1,11 @@
+{% extends './layout.html.twig' %}
+
+{% block title %}{{ parent() }} Supprimer{% endblock %}
+
+{% block job_body %}
+
+    <h1 class="text-center">{{ parent() |upper }} - Suppression de Job</h1>
+
+    <p>Etes-vous sûr de bien vouloir supprimer le job ayant l'id : {{ id }}</p>
+
+{% endblock %}

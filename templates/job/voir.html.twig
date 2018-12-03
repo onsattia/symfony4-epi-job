@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('notice') %}
+        <div class="flash-info" style="color: red">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <h1>Détails du job ayant l'id : {{ job.id }}</h1>
+    <h2>Intitulé : {{ job.title }}</h2>
+    <h2>Company : {{ job.company }}</h2>
+    <h2>Description : {{ job.description }}</h2>
+    {% if job.image  is not null %}
+        <h2>Image</h2>
+        <img src="{{ job.image.url }}" alt="{{ job.image.alt }}" height="100">
+    {% endif %}
+{% endblock %}
+
